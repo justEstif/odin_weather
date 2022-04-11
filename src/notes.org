@@ -21,15 +21,11 @@
      - AccuWeather City Search API to get city key
      - pass the city key to weather return function
      - I need to async functions to search the request and retrieve the requested info
-   -
+
    - I need the front-end to change based on the returned response
      - It has to change the icon based on the returned weather
      - The display has to change based on the returned
      - It displays what was last searched; it needs to use the local storage API
-   - It has to look nice
-     - It has to be well center and look similar to material theme
-     - The colors should be well picked
-   - How do I search for country?
 2. Plan
    - Two module: weather and UI
    - Weather Module
