@@ -1,0 +1,60 @@
+#+title: Project Weather App
+
+* Functions:
++ able to search for a specific location and toggle displaying the data in F or C
++ changes the look of the page based on the data
+  + you can use an outside api to search for corresponding media to display
+
+* Steps:
+1. html, js, css files
+2. functions to connect to api, take search terms and return weather for that location
+3. function that process the JSON data and return the required data
+4. form that will let users input their location and will fetch the weather info
+5. display info on page
+6. style and maybe add loading component while api is fetching info
+
+* Problem Solving
+1. Understand and explain the problem to a duck
+   - I will be using AccuWeather, it is better documented
+
+   - I will request the weather data of the searched city
+     - AccuWeather City Search API to get city key
+     - pass the city key to weather return function
+     - I need to async functions to search the request and retrieve the requested info
+
+   - I need the front-end to change based on the returned response
+     - It has to change the icon based on the returned weather
+     - The display has to change based on the returned
+     - It displays what was last searched; it needs to use the local storage API
+2. Plan
+   - Two module: weather and UI
+   - Weather Module
+     - searches city
+       - form input passed to getCityKey function
+     - getCityKey functions passes cityKey to getWeather function
+       - *TODO: what if there is no city key returned?*
+         - form validation I think
+       - returns weather object
+     - formatWeatherObject
+       - returns the required data to UI function
+   - UI Module
+     - onStart
+       - checkLocalStorage: function to check localStorage
+         - if there is value, will return that
+       - function to load last search from local storage or an empty page
+     - passSearched
+       - function to trim, validate and pass searched term to getCityKey
+     - *TODO: what to do about the front-end?*
+3. Pseudocode and research applicable functions
+   1. to get city
+      -`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${API_KEY}&q=${search_term}`
+   2. to get weather
+      - `http://dataservice.accuweather.com/currentconditions/v1/${city_key}?apikey=${API_KEY}`
+
+4. Divide and conquer
+* Completed
+- Done with the functions that relate to getting input and outputting weather object
+  - style the output and make sure it matches with the weather object
+    - show corresponding icons
+    - show corresponding day/night picture
+  - switch between F and C
