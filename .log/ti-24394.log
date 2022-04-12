@@ -1,0 +1,60 @@
+[07:07:59.378] Global cache location '/home/estif/.cache/typescript/4.6', safe file path '/usr/lib/node_modules/typescript/lib/typingSafeList.json', types map path /usr/lib/node_modules/typescript/lib/typesMap.json
+[07:07:59.382] Processing cache location '/home/estif/.cache/typescript/4.6'
+[07:07:59.382] Trying to find '/home/estif/.cache/typescript/4.6/package.json'...
+[07:07:59.390] Loaded content of '/home/estif/.cache/typescript/4.6/package.json': {"private":true,"dependencies":{"types-registry":"^0.1.587"},"devDependencies":{"@types/babel__core":"^7.1.19","@types/babel__preset-env":"^7.9.2","@types/babelify":"^7.3.7","@types/browser-sync":"^2.26.3","@types/connect-history-api-fallback":"^1.3.5","@types/debug":"^4.1.7","@types/eslint":"^8.4.1","@types/gulp":"^4.0.9","@types/gulp-autoprefixer":"^0.0.33","@types/gulp-sass":"^5.0.0","@types/gulp-sourcemaps":"^0.0.35","@types/jquery":"^3.5.14","@types/lodash":"^4.14.181","@types/mem-fs-editor":"^7.0.1","@types/minimist":"^1.2.2","@types/prettier":"^2.4.4","@types/request":"^2.48.8","@types/semver":"^7.3.9","@types/through2":"^2.0.36","@types/tsc-watch":"^4.2.0","@types/yeoman-environment":"^2.10.7","@types/yeoman-generator":"^5.2.10"}}
+[07:07:59.390] Loaded content of '/home/estif/.cache/typescript/4.6/package-lock.json'
+[07:07:59.439] Adding entry into typings cache: 'babel__core' => '/home/estif/.cache/typescript/4.6/node_modules/@types/babel__core/index.d.ts'
+[07:07:59.446] Adding entry into typings cache: 'babel__preset-env' => '/home/estif/.cache/typescript/4.6/node_modules/@types/babel__preset-env/index.d.ts'
+[07:07:59.452] Adding entry into typings cache: 'babelify' => '/home/estif/.cache/typescript/4.6/node_modules/@types/babelify/index.d.ts'
+[07:07:59.458] Adding entry into typings cache: 'browser-sync' => '/home/estif/.cache/typescript/4.6/node_modules/@types/browser-sync/index.d.ts'
+[07:07:59.464] Adding entry into typings cache: 'connect-history-api-fallback' => '/home/estif/.cache/typescript/4.6/node_modules/@types/connect-history-api-fallback/index.d.ts'
+[07:07:59.472] Adding entry into typings cache: 'debug' => '/home/estif/.cache/typescript/4.6/node_modules/@types/debug/index.d.ts'
+[07:07:59.480] Adding entry into typings cache: 'eslint' => '/home/estif/.cache/typescript/4.6/node_modules/@types/eslint/index.d.ts'
+[07:07:59.486] Adding entry into typings cache: 'gulp' => '/home/estif/.cache/typescript/4.6/node_modules/@types/gulp/index.d.ts'
+[07:07:59.493] Adding entry into typings cache: 'gulp-autoprefixer' => '/home/estif/.cache/typescript/4.6/node_modules/@types/gulp-autoprefixer/index.d.ts'
+[07:07:59.498] Adding entry into typings cache: 'gulp-sass' => '/home/estif/.cache/typescript/4.6/node_modules/@types/gulp-sass/index.d.ts'
+[07:07:59.504] Adding entry into typings cache: 'gulp-sourcemaps' => '/home/estif/.cache/typescript/4.6/node_modules/@types/gulp-sourcemaps/index.d.ts'
+[07:07:59.524] Adding entry into typings cache: 'jquery' => '/home/estif/.cache/typescript/4.6/node_modules/@types/jquery/index.d.ts'
+[07:07:59.532] Adding entry into typings cache: 'lodash' => '/home/estif/.cache/typescript/4.6/node_modules/@types/lodash/index.d.ts'
+[07:07:59.538] Adding entry into typings cache: 'mem-fs-editor' => '/home/estif/.cache/typescript/4.6/node_modules/@types/mem-fs-editor/index.d.ts'
+[07:07:59.542] Adding entry into typings cache: 'minimist' => '/home/estif/.cache/typescript/4.6/node_modules/@types/minimist/index.d.ts'
+[07:07:59.548] Adding entry into typings cache: 'prettier' => '/home/estif/.cache/typescript/4.6/node_modules/@types/prettier/index.d.ts'
+[07:07:59.553] Adding entry into typings cache: 'request' => '/home/estif/.cache/typescript/4.6/node_modules/@types/request/index.d.ts'
+[07:07:59.561] Adding entry into typings cache: 'semver' => '/home/estif/.cache/typescript/4.6/node_modules/@types/semver/index.d.ts'
+[07:07:59.567] Adding entry into typings cache: 'through2' => '/home/estif/.cache/typescript/4.6/node_modules/@types/through2/index.d.ts'
+[07:07:59.570] Adding entry into typings cache: 'tsc-watch' => '/home/estif/.cache/typescript/4.6/node_modules/@types/tsc-watch/index.d.ts'
+[07:07:59.575] Adding entry into typings cache: 'yeoman-environment' => '/home/estif/.cache/typescript/4.6/node_modules/@types/yeoman-environment/index.d.ts'
+[07:07:59.578] Adding entry into typings cache: 'yeoman-generator' => '/home/estif/.cache/typescript/4.6/node_modules/@types/yeoman-generator/index.d.ts'
+[07:07:59.578] Finished processing cache location '/home/estif/.cache/typescript/4.6'
+[07:07:59.579] Process id: 24411
+[07:07:59.579] NPM location: /usr/bin/npm (explicit '--npmLocation' not  provided)
+[07:07:59.579] validateDefaultNpmLocation: false
+[07:07:59.580] Npm config file: /home/estif/.cache/typescript/4.6/package.json
+[07:07:59.580] Updating types-registry npm package...
+[07:07:59.580] Exec: /usr/bin/npm install --ignore-scripts types-registry@latest
+[07:08:02.213]     Succeeded. stdout:
+    
+    up to date, audited 119 packages in 2s
+
+8 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+
+[07:08:02.213] Updated types-registry npm package
+[07:08:02.341] Got install request {"projectName":"/dev/null/inferredProject1*","fileNames":["/usr/lib/node_modules/typescript/lib/lib.es5.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.d.ts","/usr/lib/node_modules/typescript/lib/lib.dom.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.webworker.importscripts.d.ts","/usr/lib/node_modules/typescript/lib/lib.scripthost.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.core.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.collection.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.generator.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.iterable.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.promise.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.proxy.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.reflect.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.array.include.d.ts","/usr/lib/node_modules/typescript/lib/lib.es2016.full.d.ts","/home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/script.js"],"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typeAcquisition":{"enable":true,"include":[],"exclude":[]},"unresolvedImports":[],"projectRootPath":"/home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src","kind":"discover"}
+[07:08:02.385] Loaded safelist from types map file '/usr/lib/node_modules/typescript/lib/typesMap.json'
+[07:08:02.387] Explicitly included types: []
+[07:08:02.389] Inferred typings from unresolved imports: []
+[07:08:02.390] Result: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/bower_components","/home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/node_modules"]}
+[07:08:02.390] Finished typings discovery: {"cachedTypingPaths":[],"newTypingNames":[],"filesToWatch":["/home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/bower_components","/home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/node_modules"]}
+[07:08:02.392] DirectoryWatcher:: Added:: WatchInfo: /home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/bower_components
+[07:08:02.394] DirectoryWatcher:: Added:: WatchInfo: /home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[07:08:02.399] Elapsed:: 4.827155000530183ms DirectoryWatcher:: Added:: WatchInfo: /home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/bower_components 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[07:08:02.399] DirectoryWatcher:: Added:: WatchInfo: /home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/node_modules
+[07:08:02.400] DirectoryWatcher:: Added:: WatchInfo: /home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[07:08:02.400] Elapsed:: 0.41554899979382753ms DirectoryWatcher:: Added:: WatchInfo: /home/estif/Documents/The Odin Project/Javascript/async_js_api/odin_weather/src/node_modules 1 undefined Project: /dev/null/inferredProject1* watcher already invoked: false
+[07:08:02.401] Sending response:
+    {"projectName":"/dev/null/inferredProject1*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"module":1,"target":3,"jsx":1,"allowJs":true,"allowSyntheticDefaultImports":true,"allowNonTsExtensions":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
+[07:08:02.402] Response has been sent.
+[07:08:02.402] No new typings were requested as a result of typings discovery
