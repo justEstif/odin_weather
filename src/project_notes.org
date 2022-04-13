@@ -58,3 +58,10 @@
     - show corresponding icons
     - show corresponding day/night picture
   - switch between F and C
+* Final Notes
+- I have decided that the since the styling isn't the most important part of this page, I will continue with the ciriculum once I make sure all the requirements are completed.
+- Features to implement at a later date:
+  - more api's to show other weather related information
+    - wind
+    - weather in upcoming days and hours
+    - using queryselector instead of just adding the html to the page

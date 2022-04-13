@@ -44,7 +44,18 @@ function Forecast(formInput) {
   return { getData };
 }
 
+function buttonFunction() {
+  let temps = document.querySelectorAll('.temperature')
+  temps.forEach(temp => {
+    temp.classList.toggle("hide")
+  })
+}
 function updateUI(weatherObject) {
+  if (weatherObject.day) {
+    document.querySelector("body").className = "day";
+  } else {
+    document.querySelector("body").className = "night";
+  }
   const weatherCard = `
         <div class="weather-card-left">
           <div class="weather-card-title">
@@ -57,12 +68,14 @@ function updateUI(weatherObject) {
           </div>
           <div class="weather-card-body">
             <div class="weather-body-left">
-              <div class="temperature"><h2>${weatherObject.tempC}&#8451;</h2></div>
+              <div class="temperature" id="tempC"><h2>${weatherObject.tempC}&#8451;</h2></div>
+              <div class="temperature hide" id="tempF"><h2>${weatherObject.tempF}&#8457;</h2></div>
               <img
                 class="weather-icon"
                 src="src/icons/${weatherObject.icon}.svg"
                 alt="weather-icon-here"
               />
+              <button onclick="buttonFunction()">Change Unit</button>
             </div>
             <div class="weather-body-right">
               <div class="prec">
@@ -77,7 +90,6 @@ function updateUI(weatherObject) {
           </div>
   `;
   weatherCardContainer.innerHTML = weatherCard;
-  console.log(weatherObject);
   //functions to set the different parts of the html
 }
 // event listeners

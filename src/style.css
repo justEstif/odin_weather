@@ -57,6 +57,9 @@ body {
   align-items: center;
   text-align: center;
 }
+body.night {
+  background-image: url("normal_night.png");
+}
 .weather-card-container {
   margin: 5vh;
   width: 900px;
@@ -74,4 +77,7 @@ body {
 .weather-body {
   display: flex;
   flex-direction: column;
+}
+.hide {
+  display: none;
 }
