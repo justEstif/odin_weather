@@ -1,8 +1,9 @@
-import ICoordinate from "./coordinate";
+import ICoordinate from './coordinate'
 
 interface ICityInfo {
-  coordinate: ICoordinate;
-  name: string;
+  coordinate: ICoordinate
+  name: string
+  state: string
 }
 
-export default ICityInfo;
+export default ICityInfo
