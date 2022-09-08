@@ -1,27 +1,22 @@
-import type { NextPage } from "next";
-import OpenWeather from "../services/openWeather.service";
-import { useEffect } from "react";
+import type { NextPage } from 'next'
+import OpenWeather from '../services/openWeather.service'
+import { useEffect, useState } from 'react'
+import { Form } from 'components'
 
-const weather = new OpenWeather();
+const weather = new OpenWeather()
 
 const Home: NextPage = () => {
+  const [city, setCity] = useState('')
+
   useEffect(() => {
     const fetchData = async () => {
-      const cityInfo = await weather.getWeather("London");
+      const cityInfo = await weather.getWeather(city)
       console.log(cityInfo)
-    };
-    fetchData()
-  }, []);
+    }
+    if (city !== '') fetchData()
+  }, [city])
 
-  return (
-    <form>
-      <label>
-        <p>New Item</p>
-        <input type="text" />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
-  );
-};
+  return <Form setCity={setCity} />
+}
 
-export default Home;
+export default Home
