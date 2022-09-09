@@ -1,7 +1,7 @@
 interface ICurrentTemp {
-  tempC: number
-  tempF: number
-  tempK: number
+  tempC: string
+  tempF: string
+  tempK: string
 }
 
 interface ITemp {
