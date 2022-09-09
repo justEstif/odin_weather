@@ -6,14 +6,13 @@ import ITemp from 'interface/ITemp'
 import ITimeDate from 'interface/ITimeDate'
 import ICityInfo from 'interface/ICityInfo'
 import ICityWeather from 'interface/ICityWeather'
+import { getGeoCodingLink, getWeatherConditionLink } from './openweather.api'
 
 class OpenWeather {
-  private apiDomain = 'http://api.openweathermap.org'
-
   private getCityGeoInfo = async (
     cityName: string
   ): Promise<ICityGeoInfo | undefined> => {
-    const url = `${this.apiDomain}/geo/1.0/direct?q=${cityName}&limit=5&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API}`
+    const url = getGeoCodingLink(cityName)
     try {
       let response = await fetch(url)
       let json: IGeocodingApi[] = await response.json()
@@ -34,9 +33,9 @@ class OpenWeather {
     const getWeatherObj = (tempK: number) => {
       const kelvin = new Converter.Kelvin(tempK)
       return {
-        tempC: parseFloat(kelvin.toCelsius().toFixed(2)),
-        tempF: parseFloat(kelvin.toFahrenheit().toFixed(2)),
-        tempK
+        tempC: kelvin.toCelsius().toFixed(2) + '°C',
+        tempF: kelvin.toFahrenheit().toFixed(2) + '°F',
+        tempK: tempK.toFixed(2) + 'K'
       }
     }
 
@@ -64,7 +63,7 @@ class OpenWeather {
   private getCityWeather = async (
     coordinate: ICoordinate
   ): Promise<ICityWeather | undefined> => {
-    const url = `${this.apiDomain}/data/2.5/weather?lat=${coordinate.latitude}&lon=${coordinate.longitude}&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API}`
+    const url = getWeatherConditionLink(coordinate)
     try {
       const response = await fetch(url)
       const json = await response.json()
