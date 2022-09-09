@@ -1,3 +1,4 @@
+import IWeather from 'interface/IWeather'
 export interface IGeocodingApi {
   state: string
   name: string
@@ -16,13 +17,6 @@ export interface ICurrentWeatherApi {
     sea_level: number
     grnd_level: number
   }
-  weather: [
-    {
-      id: number
-      main: string
-      description: string
-      icon: string
-    }
-  ]
+  weather: IWeather[]
   timezone: number
 }

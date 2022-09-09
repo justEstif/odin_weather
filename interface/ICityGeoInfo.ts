@@ -1,9 +1,9 @@
 import ICoordinate from './coordinate'
 
-interface ICityInfo {
+interface ICityGeoInfo {
   coordinate: ICoordinate
   name: string
   state: string
 }
 
-export default ICityInfo
+export default ICityGeoInfo
