@@ -1,8 +1,12 @@
 import CurrentWeather from './currentCondition.service'
 import Geocoding from './geocoding.service'
+import { ICurrentWeather } from './openWeather.interface'
 
 class OpenWeather {
-  public getCurrentWeather = async (searchTerm: string, unit?: string) => {
+  public getCurrentWeather = async (
+    searchTerm: string,
+    unit?: string
+  ): Promise<ICurrentWeather> => {
     try {
       const geocode = new Geocoding(searchTerm)
       const geocodeObj = await geocode.getGeocode()
@@ -13,8 +17,7 @@ class OpenWeather {
         ...currentConditionObj
       }
     } catch (error) {
-      console.log(error)
-      return null
+      throw error
     }
   }
 }
