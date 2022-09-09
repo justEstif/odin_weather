@@ -1,33 +1,32 @@
 import { Dispatch, SetStateAction } from 'react'
-import { Input, FormControl, FormLabel } from '@chakra-ui/react'
-import { useFormik } from 'formik'
+import { Box, Input, FormControl, FormLabel } from '@chakra-ui/react'
+import { Field, Formik } from 'formik'
 
 type FormProps = {
   setCity: Dispatch<SetStateAction<string>>
 }
-function Form({ setCity }: FormProps) {
-  const formik = useFormik({
-    initialValues: {
-      userInput: ''
-    },
-    onSubmit: (values) => {
-      setCity(values.userInput)
-    }
-  })
 
+function Form({ setCity }: FormProps) {
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <FormControl>
-        <FormLabel>Enter city:</FormLabel>
-        <Input
-          name="userInput"
-          value={formik.values.userInput}
-          onChange={formik.handleChange}
-          placeholder="Paris"
-          size="sm"
-        />
-      </FormControl>
-    </form>
+    <Box>
+      <Formik
+        initialValues={{
+          userInput: ''
+        }}
+        onSubmit={(values) => {
+          setCity(values.userInput)
+        }}
+      >
+        {({ handleSubmit }) => (
+          <form onSubmit={handleSubmit}>
+            <FormControl>
+              <FormLabel htmlFor="userInput">Enter city:</FormLabel>
+              <Field as={Input} id="userInput" name="userInput" type="text" />
+            </FormControl>
+          </form>
+        )}
+      </Formik>
+    </Box>
   )
 }
 
