@@ -10,7 +10,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const cityInfo = await weather.getWeather(city)
+      const cityInfo = await weather.getCityInfo(city)
       console.log(cityInfo)
     }
     if (city !== '') fetchData()
