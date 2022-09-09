@@ -57,8 +57,8 @@ export interface ICurrentCondition {
   wind: number
   cloud: number
   temp: number
-  feels_like: number
-  timezone: number
+  feelsLike: number
+  timeOffset: number
   weather: {
     main: string
     description: string

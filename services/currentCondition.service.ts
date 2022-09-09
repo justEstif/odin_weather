@@ -31,6 +31,14 @@ class CurrentWeather {
     }
   }
 
+  private getCityOffset = (timezone: number) => {
+    const localTime = new Date().getTime()
+    const localOffset = new Date().getTimezoneOffset() * 60000
+    const currentUtcTime = localOffset + localTime
+    const cityOffset = currentUtcTime + 1000 * timezone
+    return cityOffset
+  }
+
   public getCurrentCondition = async (): Promise<ICurrentCondition> => {
     try {
       const currentCondition = await this.getApiResponse()
@@ -38,8 +46,8 @@ class CurrentWeather {
         wind: currentCondition.wind.speed,
         cloud: currentCondition.clouds.all,
         temp: currentCondition.main.temp,
-        feels_like: currentCondition.main.feels_like,
-        timezone: currentCondition.timezone,
+        feelsLike: currentCondition.main.feels_like,
+        timeOffset: this.getCityOffset(currentCondition.timezone),
         weather: {
           main: currentCondition.weather[0].main,
           description: currentCondition.weather[0].description,
