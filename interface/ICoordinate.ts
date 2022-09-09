@@ -1,6 +1,6 @@
 interface ICoordinate {
-  longitude: number;
-  latitude: number;
+  lon: number;
+  lat: number;
 }
 
 export default ICoordinate;

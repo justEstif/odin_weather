@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import OpenWeather from '../services/openWeather.service'
+import OpenWeather from 'services/openWeather.controller'
 import { useEffect, useState } from 'react'
 import { Form } from 'components'
 
@@ -10,8 +10,8 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const cityInfo = await weather.getCityInfo(city)
-      console.log(cityInfo)
+      const result = await weather.getCurrentWeather(city)
+      console.log(result)
     }
     if (city !== '') fetchData()
   }, [city])

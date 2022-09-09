@@ -1,0 +1,63 @@
+import ICoordinate from 'interface/ICoordinate'
+import {
+  ICurrentConditionResult,
+  ICurrentCondition
+} from './currentCondition.interface'
+
+class CurrentWeather {
+  private coordinate: ICoordinate
+  private url!: string
+  private unit: string
+
+  constructor(coordinate: ICoordinate, unit: string = 'metric') {
+    this.coordinate = coordinate
+    this.unit = unit // (C vs F),(m/s vs mih)
+    this.getCurrentConditionLink()
+    this.getApiResponse()
+  }
+
+  private getCurrentConditionLink = () => {
+    const apiDomain = 'http://api.openweathermap.org'
+    const { lat, lon } = this.coordinate
+    this.url = `${apiDomain}/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API}&units=${this.unit}`
+  }
+
+  private getApiResponse = async (): Promise<ICurrentConditionResult> => {
+    try {
+      const response = await fetch(this.url)
+      return await response.json()
+    } catch (error) {
+      throw 'No Current Condition API response'
+    }
+  }
+
+  public getCurrentCondition = async (): Promise<ICurrentCondition> => {
+    try {
+      const currentCondition = await this.getApiResponse()
+      return {
+        wind: currentCondition.wind.speed,
+        cloud: currentCondition.clouds.all,
+        temp: currentCondition.main.temp,
+        feels_like: currentCondition.main.feels_like,
+        timezone: currentCondition.timezone,
+        weather: {
+          main: currentCondition.weather[0].main,
+          description: currentCondition.weather[0].description,
+          icon: currentCondition.weather[0].icon,
+          id: currentCondition.weather[0].id
+        },
+        humidity: currentCondition.main.humidity,
+        ...(!!currentCondition.snow && {
+          snow: currentCondition.snow['1h']
+        }),
+        ...(!!currentCondition.rain && {
+          rain: currentCondition.rain['1h']
+        })
+      }
+    } catch (error) {
+      throw error
+    }
+  }
+}
+
+export default CurrentWeather
