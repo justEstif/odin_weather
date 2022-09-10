@@ -26,7 +26,6 @@
 - Daily forecast
 
 ```js
-
  public getTimeDate = (timezone: number): ITimeDate => {
    const localTime = new Date().getTime()
    const localOffset = new Date().getTimezoneOffset() * 60000
@@ -42,3 +41,4 @@
 
 ```
 
+- Use a drawer form

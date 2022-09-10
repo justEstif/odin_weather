@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import OpenWeather from 'services/openWeather.controller'
 import { useEffect, useState } from 'react'
-import { Form } from 'components'
+import { Form, ConvertDrawer } from 'components'
 import { ICurrentWeather } from 'services/openWeather.interface'
 import { Box } from '@chakra-ui/react'
 
@@ -25,6 +25,7 @@ const Home: NextPage = () => {
   return (
     <Box>
       <Form setCity={setCity} />
+      <ConvertDrawer />
     </Box>
   )
 }
