@@ -1,3 +1,4 @@
+import { TConvertDrawer } from './sidepanel.types'
 import {
   useDisclosure,
   Button,
@@ -7,11 +8,10 @@ import {
   DrawerCloseButton,
   DrawerHeader,
   DrawerBody,
-  Input,
   DrawerFooter
 } from '@chakra-ui/react'
 
-const ConvertDrawer = () => {
+const ConvertDrawer = ({ form }: TConvertDrawer) => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   return (
     <>
@@ -20,23 +20,11 @@ const ConvertDrawer = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
-
-          <DrawerBody>
-            <form
-              id="my-form"
-              onSubmit={(e) => {
-                e.preventDefault()
-                console.log('submitted')
-              }}
-            >
-              <Input name="nickname" placeholder="Type here..." />
-            </form>
-          </DrawerBody>
-
+          <DrawerHeader>Search</DrawerHeader>
+          <DrawerBody>{form}</DrawerBody>
           <DrawerFooter>
-            <Button type="submit" form="my-form">
-              Save
+            <Button type="submit" form={'weather-form'}>
+              Search
             </Button>
           </DrawerFooter>
         </DrawerContent>
@@ -44,5 +32,4 @@ const ConvertDrawer = () => {
     </>
   )
 }
-
 export default ConvertDrawer

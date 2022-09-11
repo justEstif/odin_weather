@@ -23,22 +23,16 @@
   - humidity
   - clouds percentage
 
-- Daily forecast
-
-```js
- public getTimeDate = (timezone: number): ITimeDate => {
-   const localTime = new Date().getTime()
-   const localOffset = new Date().getTimezoneOffset() * 60000
-   const currentUtcTime = localOffset + localTime
-   const cityOffset = currentUtcTime + 1000 * timezone
-   const cityTimeDate = new Date(cityOffset).toTimeString().split(' ')
-   return {
-     time: cityTimeDate[0],
-     date: cityTimeDate[1],
-     timezone
-   }
- }
-
-```
-
 - Use a drawer form
+
+## TODOS
+
+- Divide the page into two
+
+  - main body
+
+    - show the search result
+
+  - side panel
+
+    - form for searching city and picking unit

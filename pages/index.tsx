@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import OpenWeather from 'services/openWeather.controller'
 import { useEffect, useState } from 'react'
-import { Form, ConvertDrawer } from 'components'
+import { Form, ConvertDrawer } from 'components/sidePanel'
 import { ICurrentWeather } from 'services/openWeather.interface'
 import { Box } from '@chakra-ui/react'
 
@@ -17,15 +17,20 @@ const Home: NextPage = () => {
     const fetchData = async () => {
       const result = await weather.getCurrentWeather(city)
       setCurrentWeather(() => result)
-      console.log(currentWeather)
     }
     if (city !== '') fetchData()
   }, [city])
 
+  const form = <Form setCity={setCity} />
+  const cityName = currentWeather && (
+    <p>
+      {currentWeather.name}, {currentWeather.country}
+      {currentWeather.temp}, {currentWeather.feelsLike}
+    </p>
+  )
   return (
     <Box>
-      <Form setCity={setCity} />
-      <ConvertDrawer />
+      <ConvertDrawer form={form} />
     </Box>
   )
 }
