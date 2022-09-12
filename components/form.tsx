@@ -1,4 +1,4 @@
-import {Box, HStack, Input, FormControl, Select } from '@chakra-ui/react'
+import {Box, HStack, Input, FormControl, Select, Flex } from '@chakra-ui/react'
 import { IUserSearch } from '../pages'
 import { useForm } from 'react-hook-form'
 import { Dispatch, SetStateAction } from 'react'
@@ -15,12 +15,12 @@ function Form({ setUserSearch }: TFormProps) {
         id="weather-form"
         onSubmit={handleSubmit((data) => setUserSearch(data))}
       >
-        <HStack spacing="5px">
+        <Flex justifyContent='center' alignItems='center'>
           <FormControl>
             <Input
               id="userInput"
               variant="flushed"
-              placeholder="Paris"
+              placeholder="Enter city..."
               {...register('userInput')}
             />
           </FormControl>
@@ -35,7 +35,7 @@ function Form({ setUserSearch }: TFormProps) {
               <option value="imperial">°F</option>
             </Select>
           </FormControl>
-        </HStack>
+        </Flex>
       </form>
     </Box>
   )
