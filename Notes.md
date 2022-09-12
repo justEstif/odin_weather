@@ -39,9 +39,31 @@
 
     - form for searching city and picking unit
 
-```
+```js
 const time =
   currentWeather &&
   ( new Date(currentWeather?.timeOffset).toTimeString().split(' ')[0] ).toString(0)
 const cityTime = time && <p>{time.toString()}</p>`
+```
+
+```js
+<Grid>
+  <Text fontSize="6xl">
+    {name}, {country}
+  </Text>
+  <Text fontSize="3xl">
+    Current temp: {temp}
+    {unit.temp}
+  </Text>
+  <Text fontSize="3xl">
+    Feels like: {feelsLike}
+    {unit.temp}
+  </Text>
+  <Text fontSize="3xl">{main}</Text>
+  <Image
+    src={`/weatherIcons/${weatherIcon}.svg`}
+    width="60"
+    height="60"
+  />
+</Grid>
 ```

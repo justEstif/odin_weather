@@ -1,4 +1,4 @@
-import { Grid, Text } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { ICurrentWeather } from 'services/openWeather.interface'
 import Image from 'next/image'
 // import { useState, useEffect } from 'react'
@@ -22,29 +22,24 @@ const Weather = ({ currentWeather }: IWeatherProps) => {
         name,
         country,
         weatherIcon,
+        rain,
+        snow,
         weather: { main }
       } = currentWeather
-
       return (
-        <Grid>
-          <Text fontSize="6xl">
-            {name}, {country}
-          </Text>
-          <Text fontSize="3xl">
-            Current temp: {temp}
-            {unit.temp}
-          </Text>
-          <Text fontSize="3xl">
-            Feels like: {feelsLike}
-            {unit.temp}
-          </Text>
-          <Text fontSize="3xl">{main}</Text>
+        <Box>
+          Current temp: {temp}
+          {unit.temp}
+          Feels like: {feelsLike}
+          {unit.temp}
+          {main}
+          {name}, {country}
           <Image
             src={`/weatherIcons/${weatherIcon}.svg`}
             width="60"
             height="60"
           />
-        </Grid>
+        </Box>
       )
   }
 }
