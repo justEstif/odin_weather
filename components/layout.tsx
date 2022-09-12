@@ -10,7 +10,6 @@ const Layout = ({ children }: PropsWithChildren) => {
         <meta name="description" content="Odin Weather" />
         <meta name="author" content="Estifanos Beyene" />
         <meta name="author" content="justEstif" />
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <meta property="og:site_name" content="Estifanos Beyene" />
         <meta name="og:title" content="Estifanos Beyene" />
@@ -18,7 +17,7 @@ const Layout = ({ children }: PropsWithChildren) => {
         <title>Odin Weather</title>
       </Head>
 
-      <Container maxW="container.md" pt={14}>
+      <Container maxW="container.xl" pt={14}>
         {children}
       </Container>
     </Box>
