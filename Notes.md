@@ -38,3 +38,10 @@
   - side panel
 
     - form for searching city and picking unit
+
+```
+const time =
+  currentWeather &&
+  new Date(currentWeather?.timeOffset).toTimeString().split(' ')[0]
+const cityTime = time && <p>{time.toString()}</p>`
+```

@@ -1,21 +1,21 @@
-import {Box, HStack, Input, FormControl, Select, Flex } from '@chakra-ui/react'
+import { Box, HStack, Input, FormControl, Select, Flex } from '@chakra-ui/react'
 import { IUserSearch } from '../pages'
 import { useForm } from 'react-hook-form'
 import { Dispatch, SetStateAction } from 'react'
 
-type TFormProps = {
+interface IFormProps {
   setUserSearch: Dispatch<SetStateAction<IUserSearch>>
 }
 
-function Form({ setUserSearch }: TFormProps) {
+const Form = ({ setUserSearch }: IFormProps) => {
   const { handleSubmit, register } = useForm<IUserSearch>()
   return (
-    <Box w='sm'>
+    <Box w="sm">
       <form
         id="weather-form"
         onSubmit={handleSubmit((data) => setUserSearch(data))}
       >
-        <Flex justifyContent='center' alignItems='center'>
+        <Flex justifyContent="center" alignItems="center">
           <FormControl>
             <Input
               id="userInput"
@@ -28,7 +28,7 @@ function Form({ setUserSearch }: TFormProps) {
             <Select
               variant="flushed"
               defaultValue="metric"
-              width='16'
+              width="16"
               {...register('unit')}
             >
               <option value="metric">°C</option>
