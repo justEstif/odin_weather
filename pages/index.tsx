@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
-import { GridItem, Grid } from '@chakra-ui/react'
+import { GridItem, Grid, Flex } from '@chakra-ui/react'
 import OpenWeather from 'services/openWeather.controller'
 import Form from 'components/form'
 import { ICurrentWeather } from 'services/openWeather.interface'
@@ -34,11 +34,16 @@ const Home: NextPage = () => {
     userSearch.userInput !== '' && userSearch.unit !== '' && fetchData()
   }, [userSearch])
 
-  const cityName = currentWeather && (
+  const time =
+    currentWeather &&
+    new Date(currentWeather?.timeOffset).toTimeString().split(' ')[0]
+  const cityTime = time && <p>{time.toString()}</p>
+  const cityInfo = currentWeather && (
     <div>
       <p>
         {currentWeather.name}, {currentWeather.country}
       </p>
+      {cityTime}
       <p>
         {currentWeather.temp}
         {currentWeather.unit.temp}
@@ -50,7 +55,6 @@ const Home: NextPage = () => {
       <p>
         {currentWeather.weather.main},{currentWeather.weather.description}
       </p>
-      <p>{currentWeather.timeOffset}</p>
       <Image
         src={`/weatherIcons/${currentWeather.weatherIcon}.svg`}
         width="60"
@@ -60,11 +64,11 @@ const Home: NextPage = () => {
   )
   return (
     <Grid h="800" templateColumns="repeat(3, 1fr)" gap={4}>
-      <GridItem colSpan={2} bg="tomato">
-        {cityName}
-      </GridItem>
-      <GridItem colSpan={1} bg="papayawhip">
-        <Form setUserSearch={setUserSearch} />
+      <GridItem colSpan={2}>{cityInfo}</GridItem>
+      <GridItem colSpan={1}>
+        <Flex justifyContent="center">
+          <Form setUserSearch={setUserSearch} />
+        </Flex>
       </GridItem>
     </Grid>
   )
