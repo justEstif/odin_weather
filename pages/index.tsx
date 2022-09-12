@@ -40,10 +40,9 @@ const Home: NextPage = () => {
     userSearch.userInput !== '' && userSearch.unit !== '' && fetchData()
   }, [userSearch])
 
-  const form = <Form setUserSearch={setUserSearch} />
   return (
     <Box h="800">
-      <NavBar form={form} />
+      <NavBar form={<Form setUserSearch={setUserSearch} />} />
       <Weather currentWeather={currentWeather} />
     </Box>
   )
