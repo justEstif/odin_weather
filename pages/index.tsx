@@ -37,7 +37,7 @@ const Home: NextPage = () => {
   return (
     <Grid h="800" templateColumns="repeat(3, 1fr)" gap={4}>
       <GridItem colSpan={2}>
-     {/* TODO: add the weather component here*/}
+        <Weather currentWeather={currentWeather} />
       </GridItem>
       <GridItem colSpan={1}>
         <Flex justifyContent="center">
