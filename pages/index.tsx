@@ -26,9 +26,7 @@ const Home: NextPage = () => {
       setCurrentWeather(() => result)
     }
 
-    if (userSearch.userInput !== '' && userSearch.unit !== '') {
-      fetchData()
-    }
+    userSearch.userInput !== '' && userSearch.unit !== '' && fetchData()
   }, [userSearch])
 
   const form = <Form setUserSearch={setUserSearch} />
