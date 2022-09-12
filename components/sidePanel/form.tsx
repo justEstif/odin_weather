@@ -1,6 +1,4 @@
 import {
-  Flex,
-  VStack,
   Input,
   FormControl,
   FormLabel,
@@ -8,50 +6,33 @@ import {
   RadioGroup,
   Stack
 } from '@chakra-ui/react'
-import { Field, Formik } from 'formik'
+import { IUserSearch } from 'pages/index.interface'
+import { useForm } from 'react-hook-form'
 import { TFormProps } from './sidepanel.types'
 
 function Form({ setUserSearch }: TFormProps) {
+  const onSubmit = (values: IUserSearch) => {
+    setUserSearch(values)
+  }
+  const { handleSubmit, register } = useForm<IUserSearch>()
   return (
-    <VStack spacing={4} align="flex-start">
-      <Formik
-        initialValues={{
-          userInput: '',
-          unit: 'metric'
-        }}
-        onSubmit={(values) => {
-          setUserSearch({
-            userInput: values.userInput,
-            unit: values.unit
-          })
-        }}
-      >
-        {({ handleSubmit }) => (
-          <form onSubmit={handleSubmit} id={'weather-form'}>
-            <FormControl>
-              <FormLabel htmlFor="userInput">Enter city:</FormLabel>
-              <Field as={Input} id="userInput" name="userInput" type="text" />
-            </FormControl>
-
-            <FormControl>
-              <FormLabel htmlFor="unit">Unit:</FormLabel>
-              <RadioGroup id="unit" name="unit">
-                <Stack spacing={4} direction="row">
-                  <Flex>
-                    <Field as={Radio} name="unit" value="metric" />
-                    °C
-                  </Flex>
-                  <Flex>
-                    <Field as={Radio} name="unit" value="imperial" />
-                    °F
-                  </Flex>
-                </Stack>
-              </RadioGroup>
-            </FormControl>
-          </form>
-        )}
-      </Formik>
-    </VStack>
+    <form id="weather-form" onSubmit={handleSubmit(onSubmit)}>
+      <FormControl>
+        <FormLabel htmlFor="userInput">Enter city:</FormLabel>
+        <Input id="userInput" placeholder="Paris" {...register('userInput')} />
+      </FormControl>
+      <RadioGroup id="unit">
+        <FormLabel htmlFor="unit">Unit:</FormLabel>
+        <Stack spacing={4} direction="row">
+          <Radio value="metric" {...register('unit')}>
+            °C
+          </Radio>
+          <Radio value="imperial" {...register('unit')}>
+            °F
+          </Radio>
+        </Stack>
+      </RadioGroup>
+    </form>
   )
 }
 
