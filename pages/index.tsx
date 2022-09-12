@@ -9,21 +9,29 @@ import { IUserSearch } from './index.interface'
 const weather = new OpenWeather()
 
 const Home: NextPage = () => {
-  const [userSearcch, setUserSearch] = useState<IUserSearch | undefined>(undefined)
-  const [city, setCity] = useState('')
+  const [userSearch, setUserSearch] = useState<IUserSearch>({
+    userInput: '',
+    unit: ''
+  })
   const [currentWeather, setCurrentWeather] = useState<
     ICurrentWeather | undefined
   >(undefined)
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await weather.getCurrentWeather(city)
+      const result = await weather.getCurrentWeather(
+        userSearch.userInput,
+        userSearch.unit
+      )
       setCurrentWeather(() => result)
     }
-    if (city !== '') fetchData()
-  }, [city])
 
-  const form = <Form setCity={setCity} />
+    if (userSearch.userInput !== '' && userSearch.unit !== '') {
+      fetchData()
+    }
+  }, [userSearch])
+
+  const form = <Form setUserSearch={setUserSearch} />
   const cityName = currentWeather && (
     <p>
       {currentWeather.name}, {currentWeather.country}

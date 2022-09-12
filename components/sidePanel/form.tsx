@@ -11,7 +11,7 @@ import {
 import { Field, Formik } from 'formik'
 import { TFormProps } from './sidepanel.types'
 
-function Form({ setCity }: TFormProps) {
+function Form({ setUserSearch }: TFormProps) {
   return (
     <VStack spacing={4} align="flex-start">
       <Formik
@@ -20,8 +20,10 @@ function Form({ setCity }: TFormProps) {
           unit: 'metric'
         }}
         onSubmit={(values) => {
-          console.log(values)
-          setCity(values.userInput)
+          setUserSearch({
+            userInput: values.userInput,
+            unit: values.unit
+          })
         }}
       >
         {({ handleSubmit }) => (

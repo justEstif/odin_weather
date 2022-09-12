@@ -1,7 +1,8 @@
+import { IUserSearch } from 'pages/index.interface'
 import { Dispatch, SetStateAction } from 'react'
 
 export type TFormProps = {
-  setCity: Dispatch<SetStateAction<string>>
+  setUserSearch: Dispatch<SetStateAction<IUserSearch>>
 }
 
 export type TConvertDrawer = {

@@ -5,7 +5,7 @@ import { ICurrentWeather } from './openWeather.interface'
 class OpenWeather {
   public getCurrentWeather = async (
     searchTerm: string,
-    unit?: string
+    unit: string
   ): Promise<ICurrentWeather> => {
     try {
       const geocode = new Geocoding(searchTerm)

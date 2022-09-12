@@ -9,7 +9,7 @@ class CurrentWeather {
   private url!: string
   private unit: string
 
-  constructor(coordinate: ICoordinate, unit: string = 'metric') {
+  constructor(coordinate: ICoordinate, unit: string) {
     this.coordinate = coordinate
     this.unit = unit // (C vs F),(m/s vs mih)
     this.getCurrentConditionLink()
