@@ -4,8 +4,11 @@ import { Box } from '@chakra-ui/react'
 import OpenWeather from 'services/openWeather.controller'
 import Form from 'components/form'
 import { ICurrentWeather } from 'services/openWeather.interface'
-import { IUserSearch } from './index.interface'
 
+interface IUserSearch {
+  userInput: string
+  unit: string
+}
 const weather = new OpenWeather()
 
 const Home: NextPage = () => {
@@ -29,7 +32,6 @@ const Home: NextPage = () => {
     userSearch.userInput !== '' && userSearch.unit !== '' && fetchData()
   }, [userSearch])
 
-  const form = <Form setUserSearch={setUserSearch} />
   const cityName = currentWeather && (
     <p>
       {currentWeather.name}, {currentWeather.country}
@@ -38,7 +40,7 @@ const Home: NextPage = () => {
   )
   return (
     <Box>
-      {form}
+      <Form setUserSearch={setUserSearch} />
       {cityName}
     </Box>
   )
