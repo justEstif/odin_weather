@@ -19,4 +19,5 @@ export interface ICurrentWeather {
   name: string
   coordinate: ICoordinate
   country: string
+  weatherIcon: string
 }
