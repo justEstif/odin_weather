@@ -24,11 +24,16 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await weather.getCurrentWeather(
-        userSearch.userInput,
-        userSearch.unit
-      )
-      setCurrentWeather(() => result)
+      try {
+        const result = await weather.getCurrentWeather(
+          userSearch.userInput,
+          userSearch.unit
+        )
+        setCurrentWeather(() => result)
+      } catch (error) {
+        setCurrentWeather(() => undefined)
+        console.log(`Error: ${error}`)
+      }
     }
 
     userSearch.userInput !== '' && userSearch.unit !== '' && fetchData()
