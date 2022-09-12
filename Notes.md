@@ -42,6 +42,6 @@
 ```
 const time =
   currentWeather &&
-  new Date(currentWeather?.timeOffset).toTimeString().split(' ')[0]
+  ( new Date(currentWeather?.timeOffset).toTimeString().split(' ')[0] ).toString(0)
 const cityTime = time && <p>{time.toString()}</p>`
 ```
