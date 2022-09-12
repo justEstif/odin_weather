@@ -1,4 +1,4 @@
-import { Box, HStack, Input, FormControl, Select, Flex } from '@chakra-ui/react'
+import { Box, Flex, Input, FormControl, Select } from '@chakra-ui/react'
 import { IUserSearch } from '../pages'
 import { useForm } from 'react-hook-form'
 import { Dispatch, SetStateAction } from 'react'
@@ -10,7 +10,7 @@ interface IFormProps {
 const Form = ({ setUserSearch }: IFormProps) => {
   const { handleSubmit, register } = useForm<IUserSearch>()
   return (
-    <Box w="sm">
+    <Box w="3xs">
       <form
         id="weather-form"
         onSubmit={handleSubmit((data) => setUserSearch(data))}

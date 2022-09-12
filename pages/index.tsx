@@ -1,10 +1,11 @@
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
-import { GridItem, Grid, Flex } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import OpenWeather from 'services/openWeather.controller'
 import { ICurrentWeather } from 'services/openWeather.interface'
 import Form from 'components/form'
 import Weather from 'components/weather'
+import NavBar from 'components/navbar'
 
 export interface IUserSearch {
   userInput: string
@@ -39,17 +40,12 @@ const Home: NextPage = () => {
     userSearch.userInput !== '' && userSearch.unit !== '' && fetchData()
   }, [userSearch])
 
+  const form = <Form setUserSearch={setUserSearch} />
   return (
-    <Grid h="800" templateColumns="repeat(3, 1fr)" gap={4}>
-      <GridItem colSpan={2}>
-        <Weather currentWeather={currentWeather} />
-      </GridItem>
-      <GridItem colSpan={1}>
-        <Flex justifyContent="center">
-          <Form setUserSearch={setUserSearch} />
-        </Flex>
-      </GridItem>
-    </Grid>
+    <Box h="800">
+      <NavBar form={form} />
+      <Weather currentWeather={currentWeather} />
+    </Box>
   )
 }
 

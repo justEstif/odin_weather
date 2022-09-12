@@ -17,7 +17,7 @@ const Layout = ({ children }: PropsWithChildren) => {
         <title>Odin Weather</title>
       </Head>
 
-      <Container maxW="container.xl" pt={14}>
+      <Container maxW="container.md" pt={5}>
         {children}
       </Container>
     </Box>
