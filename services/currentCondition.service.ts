@@ -42,6 +42,8 @@ class CurrentWeather {
   public getCurrentCondition = async (): Promise<ICurrentCondition> => {
     try {
       const currentCondition = await this.getApiResponse()
+      const tempUnit = this.unit === 'metric' ? '°C' : '°F'
+      const windUnit = this.unit === 'metric' ? 'm/s' : 'mi/hr'
       return {
         wind: currentCondition.wind.speed,
         cloud: currentCondition.clouds.all,
@@ -55,6 +57,7 @@ class CurrentWeather {
           id: currentCondition.weather[0].id
         },
         humidity: currentCondition.main.humidity,
+        unit: { temp: tempUnit, wind: windUnit },
         ...(!!currentCondition.snow && {
           snow: currentCondition.snow['1h']
         }),

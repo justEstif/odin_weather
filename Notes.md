@@ -13,12 +13,14 @@
 3. get data of user input from form
 
 - Main
+
   - Temperature
   - City Name
   - time and date
   - icons
 
 - Secondary
+
   - wind speed
   - humidity
   - clouds percentage

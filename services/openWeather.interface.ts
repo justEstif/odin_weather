@@ -5,6 +5,7 @@ export interface ICurrentWeather {
   snow?: number | undefined
   wind: number
   cloud: number
+  unit: { temp: string; wind: string }
   temp: number
   feelsLike: number
   timeOffset: number
