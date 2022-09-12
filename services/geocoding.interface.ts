@@ -1,4 +1,7 @@
-import ICoordinate from 'interface/ICoordinate'
+export interface ICoordinate {
+  lon: number;
+  lat: number;
+}
 
 export interface IGeocodeResult {
   name: string

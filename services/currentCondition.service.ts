@@ -1,4 +1,4 @@
-import ICoordinate from 'interface/ICoordinate'
+import { ICoordinate } from './geocoding.interface'
 import {
   ICurrentConditionResult,
   ICurrentCondition
