@@ -47,23 +47,31 @@ const cityTime = time && <p>{time.toString()}</p>`
 ```
 
 ```js
-<Grid>
-  <Text fontSize="6xl">
-    {name}, {country}
-  </Text>
-  <Text fontSize="3xl">
-    Current temp: {temp}
-    {unit.temp}
-  </Text>
-  <Text fontSize="3xl">
-    Feels like: {feelsLike}
-    {unit.temp}
-  </Text>
-  <Text fontSize="3xl">{main}</Text>
-  <Image
-    src={`/weatherIcons/${weatherIcon}.svg`}
-    width="60"
-    height="60"
-  />
-</Grid>
+          Current temp: {temp}
+          {unit.temp}
+          Feels like: {feelsLike}
+          {unit.temp}
+          {main}
+          {name}, {country}
 ```
+      return (
+        <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+          <GridItem>
+            <Grid templateRows="repeat(2, 1fr)" gap={6}>
+              <GridItem></GridItem>
+            </Grid>
+          </GridItem>
+          <GridItem w="100%" h="10" bg="blue.500" />
+          <GridItem w="100%" h="10" bg="blue.500" />
+          <GridItem w="100%" h="10" bg="blue.500" />
+          <GridItem w="100%" h="10" bg="blue.500" />
+          <GridItem w="100%" h="10" bg="blue.500" />
+        </Grid>
+      )
+
+            <Image
+              src={`/weatherIcons/${weatherIcon}.svg`}
+              width="60"
+              height="60"
+            />
+

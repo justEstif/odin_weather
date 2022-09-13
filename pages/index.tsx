@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
-import { Box } from '@chakra-ui/react'
+import { Box, Stack } from '@chakra-ui/react'
 import OpenWeather from 'services/openWeather.controller'
 import { ICurrentWeather } from 'services/openWeather.interface'
 import Form from 'components/form'
@@ -42,8 +42,10 @@ const Home: NextPage = () => {
 
   return (
     <Box h="800">
-      <NavBar form={<Form setUserSearch={setUserSearch} />} />
-      <Weather currentWeather={currentWeather} />
+      <Stack direction="column" gap='6'>
+        <NavBar form={<Form setUserSearch={setUserSearch} />} />
+        <Weather currentWeather={currentWeather} />
+      </Stack>
     </Box>
   )
 }

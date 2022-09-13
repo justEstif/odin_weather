@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react'
+import { Text, VStack, Stack, HStack } from '@chakra-ui/react'
 import { ICurrentWeather } from 'services/openWeather.interface'
 import Image from 'next/image'
 // import { useState, useEffect } from 'react'
@@ -17,29 +17,46 @@ const Weather = ({ currentWeather }: IWeatherProps) => {
     default:
       const {
         temp,
-        feelsLike,
         unit,
         name,
         country,
         weatherIcon,
+        humidity,
         rain,
         snow,
+        cloud,
+        wind,
         weather: { main }
       } = currentWeather
       return (
-        <Box>
-          Current temp: {temp}
-          {unit.temp}
-          Feels like: {feelsLike}
-          {unit.temp}
-          {main}
-          {name}, {country}
+        <VStack spacing={8} align="center" justify="center">
           <Image
             src={`/weatherIcons/${weatherIcon}.svg`}
-            width="60"
-            height="60"
+            width="160"
+            height="160"
           />
-        </Box>
+          <HStack spacing={28}>
+            <VStack align="start">
+              <Text fontSize={'xl'}>
+                {name}, {country}
+              </Text>
+              <Text fontSize={'xl'}>
+                {temp} {unit.temp}
+              </Text>
+              <Text fontSize={'xl'}>{main}</Text>
+            </VStack>
+
+            <VStack align="start">
+              {!!rain ?? <Text fontSize={'xl'}>Rain: {rain}</Text>}
+              {!!snow ?? <Text fontSize={'xl'}>Snow: {snow}</Text>}
+              <Text fontSize={'xl'}>
+                Wind: {wind} {unit.wind}
+              </Text>
+              <Text fontSize={'xl'}>Humidity: {humidity}%</Text>
+              <Text fontSize={'xl'}>Cloud: {cloud}%</Text>
+            </VStack>
+          </HStack>
+        </VStack>
       )
   }
 }
