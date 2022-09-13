@@ -12,7 +12,7 @@ class Geocoding {
   }
 
   private getGeocodingLink = () => {
-    const apiDomain = 'http://api.openweathermap.org'
+    const apiDomain = 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org'
     this.url = `${apiDomain}/geo/1.0/direct?q=${this.searchTerm}&limit=5&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API}`
   }
 
