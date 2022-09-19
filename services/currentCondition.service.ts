@@ -17,7 +17,7 @@ class CurrentWeather {
   }
 
   private getCurrentConditionLink = () => {
-    const apiDomain = 'http://api.openweathermap.org'
+    const apiDomain = 'https://api.openweathermap.org'
     const { lat, lon } = this.coordinate
     this.url = `${apiDomain}/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.NEXT_PUBLIC_OPEN_WEATHER_API}&units=${this.unit}`
   }
