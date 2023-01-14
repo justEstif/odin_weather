@@ -2,6 +2,8 @@
 
 - Live link: <https://odin-weather-pzsmyoowk-justestif.vercel.app/>
 
+![screenshot of project](./assets/live-link.png)
+
 ## Purpose
 
 - A capstone project on understanding of api and working with async code.
