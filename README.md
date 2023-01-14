@@ -1,16 +1,13 @@
 # Project: Weather App
 
+- Live link: <https://odin-weather-pzsmyoowk-justestif.vercel.app/>
+
+## Purpose
+
+- A capstone project on understanding of api and working with async code.
+- Project page: <https://www.theodinproject.com/lessons/node-path-javascript-weather-app>
+
 ## Using
 
 - Next.Ts
 - Chakra-ui
-
-
-## Purpose
-
-- The vanila branch was for learning how to work with async requests and api.
-This branch is to review React, and learing Next.ts and chakra-ui in preparation for the front-end of the Blog api project.
-
-- Unfortunately, the free version of openweather api uses http, so it is blocked by default on browsers.
-
-- Live link: <https://odin-weather.vercel.app/>
